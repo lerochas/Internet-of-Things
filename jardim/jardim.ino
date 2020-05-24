@@ -25,13 +25,13 @@ void update_metrics() {
 
   air_humidity = dht.readHumidity();
   if (isnan(air_humidity)) {
-    Serial.println("Erro ao ler DHT.");
+    Serial.println("Erro na leitura do DHT.");
   }
   delay(10);
 
   temp = dht.readTemperature();
   if (isnan(temp)) {
-    Serial.println("Erro ao ler DHT.");
+    Serial.println("Erro na leitura do DHT.");
   }
   delay(10);
 }
@@ -79,7 +79,7 @@ void loop() {
 
     digitalWrite(RELE_PIN, HIGH);
   } else if (too_much_sun() == true) {
-    Serial.println("Solo seco, porem muito sol, abortando irrigacao.");
+    Serial.println("O solo está seco, mas o sol está muito forte. Abortando irrigacao.");
     digitalWrite(LED_RED, HIGH);
     digitalWrite(LED_GREEN, LOW);
 

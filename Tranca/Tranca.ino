@@ -38,7 +38,7 @@ void loop() {
     if (!(strncmp(password, "1234", 4))) {
       Serial.println("Bem vindo");
     } else {
-      Serial.println("Sai fora");
+      Serial.println("Tente novamente");
     }
 
     i = 0;
@@ -48,9 +48,9 @@ void loop() {
 
 void reset() {
   while (i != 0) {
-    password[i--] = "";
+    password[i--] = NULL;
   }
 
-  Serial.println("Cleared...");
+  Serial.println("Limpo...");
   delay(500);
 }
